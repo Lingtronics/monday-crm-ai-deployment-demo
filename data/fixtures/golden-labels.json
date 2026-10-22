@@ -1,0 +1,86 @@
+[
+  {
+    "externalId": "lead-01",
+    "intent": "sales",
+    "priority": "High",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-02",
+    "intent": "sales",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-03",
+    "intent": "support",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-04",
+    "intent": "partnership",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-05",
+    "intent": "other",
+    "priority": "Unknown",
+    "manualReview": true
+  },
+  {
+    "externalId": "lead-06",
+    "intent": "sales",
+    "priority": "High",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-07",
+    "intent": "support",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-08",
+    "intent": "partnership",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-09",
+    "intent": "sales",
+    "priority": "Medium",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-10",
+    "intent": "other",
+    "priority": "Unknown",
+    "manualReview": true
+  },
+  {
+    "externalId": "lead-11",
+    "intent": "other",
+    "priority": "Unknown",
+    "manualReview": true
+  },
+  {
+    "externalId": "lead-12",
+    "intent": "sales",
+    "priority": "High",
+    "manualReview": false
+  },
+  {
+    "externalId": "lead-13",
+    "intent": "other",
+    "priority": "Unknown",
+    "manualReview": true
+  },
+  {
+    "externalId": "lead-14",
+    "intent": "sales",
+    "priority": "Medium",
+    "manualReview": false
+  }
+]

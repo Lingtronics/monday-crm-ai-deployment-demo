@@ -1,0 +1,20 @@
+import { it, expect } from 'vitest';
+import { mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { Store } from '../src/persistence/db.js';
+import { MockClient } from '../src/crm/mock-client.js';
+import { IntakeWorkflow } from '../src/workflows/intake.js';
+import { ApprovalWorkflow } from '../src/workflows/approval.js';
+it('preserves duplicate aliases, approvals and audit across restart without leaking raw text', async () => {
+  const path = join(mkdtempSync(join(tmpdir(), 'crm-durable-')), 'demo.sqlite');
+  const input = { externalId: 'durable', fullName: 'Synthetic Person', workEmail: 'durable@example.com', companyName: 'Synthetic Company', source: 'manual', message: 'pricing this week. PRIVATE_RAW_BODY' };
+  let store = new Store(path); let w = new IntakeWorkflow(store, new MockClient(store));
+  const first = await w.intake(input); await w.intake({ ...input, externalId: 'alias' });
+  await new ApprovalWorkflow(w).decide({ leadId: first.lead.id, decision: 'Approved', reviewer: 'local-demo-reviewer' }); store.close();
+  store = new Store(path); w = new IntakeWorkflow(store, new MockClient(store));
+  expect((await w.intake({ ...input, externalId: 'alias' })).lead.id).toBe(first.lead.id);
+  await new ApprovalWorkflow(w).decide({ leadId: first.lead.id, decision: 'Approved', reviewer: 'local-demo-reviewer' });
+  expect(store.operations()).toHaveLength(1); expect(store.db.prepare("SELECT key FROM mock_items WHERE key LIKE 'task-%'").all()).toHaveLength(1);
+  expect(JSON.stringify(store.audits())).not.toContain('PRIVATE_RAW_BODY'); expect(w.metrics()).toMatchObject({ triageProvider: 'fixture', realInferenceConfigured: false, validatedModelOutputs: 0 }); store.close();
+});

@@ -1,0 +1,27 @@
+{
+  "name": "monday-crm-ai-deployment-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24.0.0" },
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "demo:offline": "tsx src/scripts/demo-offline.ts",
+    "eval": "tsx src/scripts/eval.ts",
+    "setup:monday": "tsx src/scripts/setup-monday.ts",
+    "seed": "tsx src/scripts/seed.ts",
+    "intake": "tsx src/scripts/cli.ts intake",
+    "approve": "tsx src/scripts/cli.ts approve",
+    "reject": "tsx src/scripts/cli.ts reject",
+    "sync:approvals": "tsx src/scripts/sync-approvals.ts",
+    "smoke:monday": "tsx src/scripts/smoke-monday.ts",
+    "retry:sync": "tsx src/scripts/cli.ts retry",
+    "status": "tsx src/scripts/cli.ts status",
+    "start": "tsx src/http/main.ts"
+  },
+  "dependencies": { "fastify": "^5.6.0", "zod": "^4.1.0" },
+  "devDependencies": { "@eslint/js": "^9.39.0", "@types/node": "^24.0.0", "eslint": "^9.39.0", "tsx": "^4.20.0", "typescript": "^5.9.0", "typescript-eslint": "^8.46.0", "vitest": "^3.2.0" }
+}

@@ -1,0 +1,11 @@
+import type { z } from 'zod';
+import type * as schemas from './schemas.js';
+export type Intake = z.infer<typeof schemas.LeadIntake>;
+export type Triage = z.infer<typeof schemas.TriageResult>;
+export type Decision = z.infer<typeof schemas.ApprovalDecision>;
+export type Audit = z.infer<typeof schemas.AuditEvent>;
+export type Lead = Intake & { schemaVersion: 1; id: string; receivedAt: string; accountId: string; contactId?: string; mondayItemId?: string; stage: 'New' | 'Qualified' | 'Nurture' | 'Disqualified'; reviewStatus: 'Pending review' | 'Approved' | 'Rejected' | 'Needs manual review'; executionStatus: 'Not started' | 'Completed' | 'Failed'; syncStatus: 'Synced' | 'Pending sync'; recommendedPriority: 'High' | 'Medium' | 'Low' | 'Unknown'; triage?: Triage; reviewReason: string };
+export type Account = { schemaVersion: 1; id: string; name: string; normalisedDomain?: string; mondayItemId?: string; createdAt: string; updatedAt: string };
+export type Contact = { id: string; name: string; email: string; accountId: string; mondayItemId?: string };
+export type Opportunity = { schemaVersion: 1; id: string; leadId: string; accountId: string; status: 'Proposed' | 'Qualified' | 'Closed'; mondayItemId?: string };
+export type Operation = { schemaVersion: 1; id: string; leadId: string; decisionId: string; action: 'create_internal_followup' | 'propose_opportunity'; status: 'Pending' | 'Completed' | 'Failed'; mondayItemId?: string; createdAt: string };

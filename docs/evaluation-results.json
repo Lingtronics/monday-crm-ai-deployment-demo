@@ -1,0 +1,122 @@
+{
+  "provider": "fixture",
+  "realInference": false,
+  "count": 14,
+  "intentCorrect": 14,
+  "priorityCorrect": 14,
+  "manualCorrect": 14,
+  "results": [
+    {
+      "externalId": "lead-01",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-02",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-03",
+      "expectedIntent": "support",
+      "actualIntent": "support",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-04",
+      "expectedIntent": "partnership",
+      "actualIntent": "partnership",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-05",
+      "expectedIntent": "other",
+      "actualIntent": "other",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-06",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-07",
+      "expectedIntent": "support",
+      "actualIntent": "support",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-08",
+      "expectedIntent": "partnership",
+      "actualIntent": "partnership",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-09",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-10",
+      "expectedIntent": "other",
+      "actualIntent": "other",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-11",
+      "expectedIntent": "other",
+      "actualIntent": "other",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-12",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-13",
+      "expectedIntent": "other",
+      "actualIntent": "other",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    },
+    {
+      "externalId": "lead-14",
+      "expectedIntent": "sales",
+      "actualIntent": "sales",
+      "intentCorrect": true,
+      "priorityCorrect": true,
+      "manualCorrect": true
+    }
+  ]
+}
